@@ -1,6 +1,5 @@
 FROM maven:3.6.3-jdk-14 AS build
 COPY src src
-COPY mvnw mvnw
 COPY pom.xml pom.xml
 RUN  mvn clean package
 
