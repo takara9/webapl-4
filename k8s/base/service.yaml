@@ -5,7 +5,7 @@ metadata:
   labels:
     app: web-java
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8080
     #nodePort: 32080
