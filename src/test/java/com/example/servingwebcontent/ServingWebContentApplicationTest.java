@@ -17,14 +17,15 @@
 package com.example.servingwebcontent;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import org.junit.jupiter.api.Test;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.health.Status;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
+
 
 @WebMvcTest(controllers = GreetingController.class)
 public class ServingWebContentApplicationTest {
@@ -50,5 +51,14 @@ public class ServingWebContentApplicationTest {
 		mockMvc.perform(get("/greeting").param("name", "Greg"))
 				.andExpect(content().string(containsString("Hello, Greg!")));
 	}
+
+	/*
+	@Test
+	public void readiness_check() throws Exception {
+		mockMvc.perform(get("/actuator/health"))
+                 .andExpect(status().isOk());
+	}
+	*/
+	
 
 }
