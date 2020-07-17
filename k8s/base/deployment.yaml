@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: java
-        image: maho/web-java:0.2
+        image: maho/web-java:0.3
         readinessProbe:
           httpGet:
             path: /actuator/health
