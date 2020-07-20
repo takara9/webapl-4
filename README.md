@@ -28,8 +28,8 @@ Spring Boot Actuator を利用して、Kubernetes の Livness Prove と Readines
 ~~~
 
 * アプリケーションのコンテンが起動して30秒後に、Readinessプローブへ HTTPレスポンス 200 (OK) を返すようになる。それまでの間は、503 (Service Unavailable:サービス利用不可)を返す。
-* http://hostname:8080/greeting をGETでアクセスすることHTMLで応答を返す。
-* http://hostname:8080/bug をGETでアクセスではLivenessプローブが、BROKENに変わり時期にコンテナがキルされ新しいコンテンが起動される。
+* http://hostname:8080/greeting をGETでアクセスすると、HTMLで応答を返す。
+* http://hostname:8080/bug をGETアクセスでは、Livenessプローブが、BROKENに変わり時期にコンテナがキルされ新しいコンテンが起動される。
 * http://hostname:8080/crash をGETでアクセスすると、Nullポインタ例外が発生して、スタックトレースが表示される。
 
 
