@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: web-java
   labels:
-    app: web-java
+    app: webjava
 spec:
-  type: LoadBalancer
   ports:
   - port: 8080
-    #nodePort: 32080
+    name: http
   selector:
-    app: web-java
+    app: webjava
