@@ -38,8 +38,8 @@ Spring Boot Actuator を利用して、Kubernetes の Livness Prove と Readines
 
 ~~~
 docker login
-docker build -t <dockerid>/web-java:0.1 .
-docker push <dockerid>/web-java:0.1
+docker build -t <dockerid>/webapl-4 .
+docker push <dockerid>/webapl-4:1.0
 ~~~
 
 ## K8sへのデプロイ
