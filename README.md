@@ -1,4 +1,8 @@
-# Spring Boot アクチュエータによる Liveness Prove と Readiness Prove の実装
+# Java Webアプリ Spring Boot
+
+Spring Boot アクチュエータによる Liveness Prove と Readiness Prove の実装
+Java Webアプリ コンテナ　コンテナ化アプリの雛形
+
 
 OpenJDK 14、Spring Boot 2.3.1、Spring Boot アクチュエーターを利用したLivenessプローブとReadinessプローブへの応答例
 
@@ -37,17 +41,33 @@ Spring Boot Actuator を利用して、Kubernetes の Livness Prove と Readines
 ## コンテナイメージのDocker Hub への登録
 
 ~~~
-docker login
 docker build -t <dockerid>/webapl-4 .
 docker push <dockerid>/webapl-4:1.0
 ~~~
 
 ## K8sへのデプロイ
 
+
+環境設定
+
 ~~~
-cd k8s/base
-kubectl apply -k ./
+kubectl create ns webapl-java
+kubectl config set-context webapl-java --namespace=webapl-java --cluster=kubernetes --user=admin
+kubectl config use-context webapl-java
+kubectl config get-contexts
 ~~~
 
+### LoadBalanser で spring boot のサービスを公開する
+
+
+
+
+
+### Istio配下で/greetingを公開する場合
+
+~~~
+cd k8s-yaml/base
+kubectl apply -k ./
+~~~
 
 
