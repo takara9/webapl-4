@@ -21,8 +21,9 @@ pipeline {
         script {
 	   echo "Build & INTERNAL TEST"
 	   //docker.image(container).inside {
-           //  sh 'java --version'
-           //}}}}
+             //sh 'java --version'
+           //}
+	}}}
 
     stage('コンテナの外部テスト') {
       steps {
