@@ -56,7 +56,7 @@ pipeline {
                  anchore-cli image wait $container
                  anchore-cli image vuln $container all
                  anchore-cli image content $container os
-                 anchore-cli image content $container npm
+                 anchore-cli image content $container java
 		 '''
 		 }}}}
 
