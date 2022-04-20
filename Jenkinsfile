@@ -70,7 +70,7 @@ pipeline {
               APP_NAME="webapl-4"
               IMAGE_DIGEST=$(docker image inspect $container -f '{{join .RepoDigests ","}}')
               argocd --grpc-web app set  $APP_NAME --insecure --kustomize-image $IMAGE_DIGEST
-              argocd --grpc-web app sync $APP_NAME --insecure --force
+              argocd --grpc-web app sync $APP_NAME --insecure --force --timeout 600
               argocd --grpc-web app wait $APP_NAME --insecure --timeout 600
               '''
 	   }}}}}
