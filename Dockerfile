@@ -4,7 +4,7 @@ COPY pom.xml pom.xml
 RUN  mvn clean package
 
 
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 
