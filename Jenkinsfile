@@ -66,7 +66,7 @@ pipeline {
 	   withCredentials([string(credentialsId: "argocd-deploy-role", variable: 'ARGOCD_AUTH_TOKEN')]) {
               sh '''
               export ARGOCD_SERVER="argocd-server.argocd.k8s4.labo.local"
-              APP_NAME="webapl-2"
+              APP_NAME="webapl-4"
               IMAGE_DIGEST=$(docker image inspect $container -f '{{join .RepoDigests ","}}')
               argocd --grpc-web app set  $APP_NAME --insecure --kustomize-image $IMAGE_DIGEST
               argocd --grpc-web app sync $APP_NAME --insecure --force
