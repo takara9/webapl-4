@@ -32,7 +32,7 @@ pipeline {
            docker.image(container).withRun('-p 8080:8080 --name testx'){
 	      sh '''
 	      docker ps
-	      curl -i http://localhost:8080/readiness
+	      curl -i http://localhost:8080/
 	      '''
 	   }}}}
 
@@ -71,10 +71,6 @@ pipeline {
               argocd --grpc-web app set  $APP_NAME --insecure --kustomize-image $IMAGE_DIGEST
               argocd --grpc-web app sync $APP_NAME --insecure --force
               argocd --grpc-web app wait $APP_NAME --insecure --timeout 600
-              echo "-------------------"
-	      argocd version --insecure
-              env
-              echo "-------------------"	
               '''
 	   }}}}}
   post {
