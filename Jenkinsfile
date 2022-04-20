@@ -32,7 +32,7 @@ pipeline {
            docker.image(container).withRun('-p 8080:8080 --name testx'){
 	      sh '''
 	      docker ps
-	      curl -i http://localhost:8080/test
+	      curl -i http://localhost:8080/readiness
 	      '''
 	   }}}}
 
