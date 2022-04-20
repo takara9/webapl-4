@@ -32,6 +32,7 @@ pipeline {
            docker.image(container).withRun('-p 8080:8080 --name testx'){
 	      sh '''
 	      docker ps
+	      sleep 10
 	      curl -i http://localhost:8080/actuator/health/liveness
 	      '''
 	   }}}}
